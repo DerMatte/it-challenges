@@ -6,16 +6,38 @@ void settings() {
 
 void setup() {
   int savings = 0;
+  boolean auszahlen;
   
-  while (1) {
-    String text = Console.readLine();
+  while (true) {
+    Console.write("Command: ");
+    String command = Console.readLine();
     
-    if (string)
+    //String command = args[0];
+    
+    Console.write("Number: ");
+    String numberasString = Console.readLine();
+    int number = Integer.valueOf(numberasString);
+    
+    
+    switch(command.charAt(0)) {
+      case 'a':
+        auszahlen = true;
+        if (savings >= number) {
+          savings -= number;
+        } else {Console.writeLine("Ein Überziehen des Konto ist nicht erlaubt.");}
+        break;
+      case 'e':
+        auszahlen = false;
+        savings += number;
+        break;
+    }
+    
+    Console.writeLine("Aktueller Kontostand: " + savings);
   }
+  
 
-  int zahl1 = Integer.valueOf(args[0]);
-  int zahl2 = Integer.valueOf(args[1]);
-  int ergebnis = zahl1 + zahl2;
 
-  Console.writeLine("%d + %d = %d", zahl1, zahl2, ergebnis);
+  //while (readout != null) {}
+  
+  
 }
