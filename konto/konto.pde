@@ -7,37 +7,41 @@ void settings() {
 void setup() {
   int savings = 0;
   boolean auszahlen;
-  
+
   while (true) {
-    Console.write("Command: ");
+
     String command = Console.readLine();
-    
+
     //String command = args[0];
+    String splited[] = command.split(" ");
+
+    int number = Integer.parseInt(splited[1]);
     
-    Console.write("Number: ");
-    String numberasString = Console.readLine();
-    int number = Integer.valueOf(numberasString);
-    
-    
-    switch(command.charAt(0)) {
-      case 'a':
+    if (number >= 0) {
+      if (splited[0].contains("auszahlen")) {
         auszahlen = true;
         if (savings >= number) {
           savings -= number;
-        } else {Console.writeLine("Ein Überziehen des Konto ist nicht erlaubt.");}
-        break;
-      case 'e':
+          Console.writeLine("Aktueller Kontostand: " + savings);
+          break;
+        } else {
+          Console.writeLine("Ein Überziehen des Konto ist nicht erlaubt.");
+        }
+      } else if (command.contains("einzahlen")) {
         auszahlen = false;
         savings += number;
+        Console.writeLine("Aktueller Kontostand: " + savings);
         break;
+      }
+    } else {
+      Console.writeLine("Negative Beträge sind nicht erlaubt.");
     }
+
+
     
-    Console.writeLine("Aktueller Kontostand: " + savings);
   }
-  
+
 
 
   //while (readout != null) {}
-  
-  
 }
