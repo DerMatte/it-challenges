@@ -24,8 +24,8 @@ void setup() {
   float heigh = Float.parseFloat(heightString);
   
   Console.writeLine();
-  // TODO: Runden!!!
-  float bmi = weight / pow(heigh, 2);
+  // Done: Runden!!!
+  float bmi = floor(weight / pow(heigh, 2));
   Console.writeLine("BMI: " + bmi);
 
   // Untergewicht
