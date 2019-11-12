@@ -44,14 +44,14 @@ void setup() {
 
   printArray(stringNumber);
 
-  StringBuilder strNum = new StringBuilder();
-  for (int num : stringNumber) 
-  {
-    strNum.append(num);
-  }
-  int finalDigit = Integer.parseInt(strNum.toString());
-  println(finalDigit);
+  //StringBuilder strNum = new StringBuilder();
+  //for (int num : stringNumber) 
+  //{
+  //  strNum.append(num);
+  //}
+  //int finalDigit = Integer.parseInt(strNum.toString());
+  //println(finalDigit);
 
 
-  Console.write(finalDigit);
+  //Console.write(finalDigit);
 }
