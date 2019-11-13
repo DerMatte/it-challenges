@@ -17,15 +17,18 @@ void setup() {
   // TODO: able to use Commas
   Console.write("Gewicht [kg]: ");
   String weightString = Console.readLine();
-  float weight = Float.parseFloat(weightString);
+  String weight_String = weightString.replaceAll(",", ".");
+  float weight = Float.parseFloat(weight_String);
 
   Console.write("Größe [m]: ");
   String heightString = Console.readLine();
-  float heigh = Float.parseFloat(heightString);
+  String height_String = heightString.replaceAll(",", ".");
+  float heigh = Float.parseFloat(height_String);
   
   Console.writeLine();
   // Done: Runden!!!
-  float bmi = floor(weight / pow(heigh, 2));
+  float bmifloat = Math.round(weight / pow(heigh, 2));
+  int bmi = parseInt(bmifloat);
   Console.writeLine("BMI: " + bmi);
 
   // Untergewicht
