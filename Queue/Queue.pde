@@ -15,31 +15,31 @@ void setup() {
 
   while (true) {
     command = Console.readLine();
-    if (command.equals(" ")) {
-      //println("Quit!!!");
-      exit();
+    if (command.equals("")) {
       break;
-    } else if (command.charAt(0) == 'e') {
+    } else if (command.contains("enqueue ")) {
       //println("Enqueue");
-      blank1 = command.indexOf(" ");
+      blank1 = command.indexOf(" ") + 1;
       listsize++;
-      println(listsize);
+      //println(listsize);
       substring = command.substring(blank1);
       list.append(substring);
       //println(substring);
     } else if (command.charAt(0) == 'd') {
       //println("Dequeue");
       listsize--;
-      println(listsize);
+      //println(listsize);
       item = list.get(0);
       //String[] listArray = list.array();
       Console.writeLine(item);
       list.remove(0);
       if (listsize >= 1) {
       } else { 
-        exit(); 
         break;
       }
+    } else {
+      break;
     }
+    exit();
   }
 }
