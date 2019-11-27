@@ -8,11 +8,11 @@ void setup() {
   Console.write("Zahl: ");
   String valueAsString = Console.readLine();
   int value = Integer.valueOf(valueAsString);
-  double sum = 1.0000;
+  float sum = 0;
   
   
   if (value >= 0) {
-    for (int i = 1; i <= value; i++) {
+    for (float i = 1; i <= value; i++) {
       
       
       sum = sum + (1 / i);
