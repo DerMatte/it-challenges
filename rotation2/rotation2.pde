@@ -1,4 +1,4 @@
-import de.itd.inandout.*; //<>//
+import de.itd.inandout.*; //<>// //<>// //<>//
 
 void settings() {
   Console.init(this);
@@ -6,12 +6,10 @@ void settings() {
 }
 
 IntList numbers;
-IntList rotNumbers;
 
 int num;
 int r;
-int zwischenablageEins;
-int zwischenablageZwei;
+int zwischenablage;
 int pos;
 
 void setup() {  
@@ -22,8 +20,6 @@ void setup() {
 
 
   numbers = new IntList();
-  rotNumbers = new IntList();
-
   for (int i = 1; i <= countnum; i++) {
     Console.write(i + ": ");
     num = int(Console.readLine());
@@ -36,23 +32,23 @@ void setup() {
   String rotationAsString = Console.readLine();
   int rotation = Integer.valueOf(rotationAsString);
 
-  // rotate that shit
   println("");
-  for (r = 0; r <= countnum; r++) {
-    if (r >= numbers.size()) {
-      //pos = 
-    }
-    zwischenablageEins = numbers.get(r);
-    print(zwischenablageEins); //<>//
-    rotNumbers.set(r+rotation, zwischenablageEins);
+  // add Zeros
+  for (int i = 0; i <= (countnum)-1; i++) {
+    numbers.append(0);
   }
+  printArray(numbers);
 
-
-  Console.writeLine("");
-  Console.writeLine("");
-
-
-  for (int i = 0; i <= numbers.size(); i++) {
-    Console.writeLine(rotNumbers.get(i));
+  // rotate that shit
+  for (r=0; r <= countnum; r++) {
+    if (r >= countnum-1 ) {
+      pos = int(numbers.size()) - r;
+      print(pos);
+    } else {
+      zwischenablage = numbers.get(r);
+      print(zwischenablage);
+      numbers.set(r+rotation-countnum-1, zwischenablage);
+      printArray(numbers);
+    }
   }
 }
