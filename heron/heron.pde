@@ -7,21 +7,23 @@ void settings() {
 void setup() {
   // get Number
   Console.write("Geben Sie eine Zahl ein: ");
-  String valueAsString = Console.readLine();
-  int value = Integer.valueOf(valueAsString);
+  String numAsString = Console.readLine();
+  int num = Integer.valueOf(numAsString);
   // Get number of Iterations
   Console.write("Anzahl Iterationen: ");
   String iterationsAsString = Console.readLine();
   int iteration = Integer.valueOf(iterationsAsString);
 
-  int nr = value;
+  int nr = num;
   int xn;
 
   // calc
+  xn = (xn + nr / xn) / 2;
 
-  for (int i = iteration; i >= 0; i--) {
-    xn = (xn + nr / xn) / 2;
-    xn++;
-    Console.write(xn);
-  }
+  Console.write(xn);
+    
+    
+  //for (int i = 0; i >= iteration; i--) {
+    
+  //}
 }
