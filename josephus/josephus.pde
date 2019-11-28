@@ -22,13 +22,13 @@ void setup() {
 
   People = new ArrayList<Integer>();
 
-  for (int i = 1; i <= numPeople; i++) {
-    People.add(i);
+  for (int x = 1; x <= numPeople; x++) {
+    People.add(x);
   }
 
-  while (People.size() != 0) {
+  while (People.size()!=0) {
     pos += stepSize - 1;
-    pos = pos % People.size();
+    pos = pos%People.size();
     Console.writeLine(People.get(pos));
     People.remove(pos);
   }
